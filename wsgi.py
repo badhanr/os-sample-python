@@ -1,4 +1,9 @@
-import MySQLdb
-cnx = MySQLdb.connect(host='localhost', user='userRTL', passwd='eNU1gYbC1EYLe6gN',
-                      read_default_file='~/.my.cnf',
-                      read_default_group='python')
+
+import mysql.connector
+
+cnx = mysql.connector.connect(user='userRTL', password='eNU1gYbC1EYLe6gN',
+                              host='127.0.0.1',
+                              database='sampledb',
+                              use_pure=False)
+cnx.close()
+
