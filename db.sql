@@ -4,9 +4,7 @@ create table emp
     
 );
 INSERT INTO emp(name)VALUES ('Mac')
-sql = "SELECT * FROM EMPLOYEE
-sql = "SELECT * FROM EMPLOYEE \
-       WHERE INCOME > '%d'" % (1000)
+sql = SELECT * FROM EMPLOYEE
 try:
    # Execute the SQL command
    cursor.execute(sql)
