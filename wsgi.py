@@ -5,7 +5,7 @@ application = Flask(__name__)
 @application.route("/")
 def hello():
     # Open database connection
-    db = MySQLdb.connect("sampledb" )
+    db = MySQLdb.connect(host="127.0.0.1", port=8080, user="userRTL", passwd="eNU1gYbC1EYLe6gN", db="sampledb" )
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
     # execute SQL query using execute() method.
