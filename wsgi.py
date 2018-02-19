@@ -10,8 +10,7 @@ def hello():
     cursor = db.cursor()
     # execute SQL query using execute() method.
     cursor.execute("SELECT VERSION()")
-    results = cursor.fetchall()
-    return(results)
+    return("test")
     
 if __name__ == "__main__":
     application.debug = True
