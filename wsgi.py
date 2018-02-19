@@ -1,9 +1,4 @@
-from flask import Flask
-application = Flask(__name__)
-
-@application.route("/")
-def hello():
-    return "Hello World!"
-
-if __name__ == "__main__":
-    application.run()
+import MySQLdb
+cnx = MySQLdb.connect(host='localhost', user='userRTL', passwd='eNU1gYbC1EYLe6gN',
+                      read_default_file='~/.my.cnf',
+                      read_default_group='python')
