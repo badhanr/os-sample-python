@@ -1,5 +1,6 @@
-create table administradores
+create table emp
 (
-    email varchar(64) primary key,
-    password_hash text
+    name varchar(64) primary key,
+    
 );
+INSERT INTO emp(name)VALUES ('Mac')
