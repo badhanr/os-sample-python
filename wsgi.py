@@ -8,7 +8,7 @@
 import MySQLdb
 
 # Open database connection
-db = MySQLdb.connect("localhost","userRTL","eNU1gYbC1EYLe6gN","sampledb" )
+db = MySQLdb.connect("mysql://172.30.115.81:3306","userRTL","eNU1gYbC1EYLe6gN","sampledb" )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
