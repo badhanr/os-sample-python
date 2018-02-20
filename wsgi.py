@@ -12,7 +12,7 @@ def hello():
     # execute SQL query using execute() method.
     #cursor.execute("SELECT VERSION()")
     DBh=DBHelper()
-    DBh.setup()
+    #DBh.setup()
     
     #sql = """CREATE TABLE EMPLOYEE (
          #FIRST_NAME  CHAR(20) NOT NULL,
