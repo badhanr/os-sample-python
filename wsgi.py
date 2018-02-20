@@ -11,7 +11,8 @@ def hello():
     cursor = db.cursor()
     # execute SQL query using execute() method.
     cursor.execute("SELECT VERSION()")
-    DBHelper.setup()
+    DBh=DBHelper()
+    DBh.setup()
     
     #sql = """CREATE TABLE EMPLOYEE (
          #FIRST_NAME  CHAR(20) NOT NULL,
