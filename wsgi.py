@@ -18,12 +18,13 @@ def hello():
          #SEX CHAR(1),
          #INCOME FLOAT )"""
     #cursor.execute(sql)
-    #sql = """INSERT INTO EMPLOYEE(FIRST_NAME,
-         #LAST_NAME, AGE, SEX, INCOME)
-         #VALUES ('ajit', 'Mac', 20, 'M', 100)"""
-    #cursor.execute(sql)
+    sql = """INSERT INTO EMPLOYEE(FIRST_NAME,
+         LAST_NAME, AGE, SEX, INCOME)
+         VALUES ('drakshya', 'Mac', 20, 'F', 10000)"""
+    cursor.execute(sql)
+    cursor.commit()
     sql = "SELECT FIRST_NAME FROM EMPLOYEE WHERE INCOME =(?)"
-    cursor.execute(sql,100)
+    cursor.execute(sql,'10000',)
     results = cursor.fetchall()
     return(results)
     #return("test")
