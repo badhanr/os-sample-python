@@ -24,10 +24,13 @@ def hello():
     cursor.execute(sql)
     cursor.commit()
     sql = "SELECT FIRST_NAME FROM EMPLOYEE WHERE INCOME =(?)"
-    cursor.execute(sql,'10000',)
+    args = ('100',)
+    cursor.execute(sql,args)
     results = cursor.fetchall()
-    return(results)
-    #return("test")
+    results = [x for x in results]
+    print(str(results))
+    #return(results)
+    return(str(results))
 
 if __name__ == "__main__":
     application.debug = True
