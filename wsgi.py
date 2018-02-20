@@ -27,11 +27,17 @@ def hello():
     args = ('100',)
     cursor.execute(sql,args)
     results = cursor.fetchall()
-    results = [x for x in results]
-    print(str(results))
+    for row in results:
+      fname = row[0]
+      lname = row[1]
+      age = row[2]
+      sex = row[3]
+      income = row[4]
+      # Now print fetched result
+      print "fname=%s,lname=%s,age=%d,sex=%s,income=%d" % \
+             (fname, lname, age, sex, income )
     #return(results)
-    return(str(results))
-
+    return("test")
 if __name__ == "__main__":
     application.debug = True
     application.run()
