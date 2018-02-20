@@ -19,7 +19,7 @@ def hello():
     #cursor.execute(sql)
     sql = """INSERT INTO EMPLOYEE(FIRST_NAME,
          LAST_NAME, AGE, SEX, INCOME)
-         VALUES ('Madan', 'Mac', 20, 'M', 5000)"""
+         VALUES ('amit', 'Mac', 20, 'M', 5000)"""
     cursor.execute(sql)
     sql = "SELECT * FROM EMPLOYEE \
        WHERE INCOME > '%d'" % (1000)
@@ -35,8 +35,7 @@ def hello():
           sex = row[3]
           income = row[4]
           # Now print fetched result
-          return(print "fname=%s,lname=%s,age=%d,sex=%s,income=%d" % \
-                 (fname, lname, age, sex, income ))
+          retur(fname, lname, age, sex, income )
     except:
        print "Error: unable to fecth data"
     #return("test")
