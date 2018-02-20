@@ -35,7 +35,7 @@ def hello():
           sex = row[3]
           income = row[4]
           # Now print fetched result
-          retur(fname, lname, age, sex, income )
+          return(fname, lname, age, sex, income )
     except:
        print "Error: unable to fecth data"
     #return("test")
