@@ -1,6 +1,4 @@
 
-
-
 class DBHelper:
 
     def setup(self):
