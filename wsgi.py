@@ -19,10 +19,9 @@ def hello():
     #cursor.execute(sql)
     sql = """INSERT INTO EMPLOYEE(FIRST_NAME,
          LAST_NAME, AGE, SEX, INCOME)
-         VALUES ('mohan', 'Mac', 20, 'M', 7000)"""
+         VALUES ('ajit', 'Mac', 20, 'M', 100)"""
     cursor.execute(sql)
-    sql = "SELECT FIRST_NAME FROM EMPLOYEE \
-       WHERE INCOME == '%d'" % (7000)
+    sql = "SELECT FIRST_NAME FROM EMPLOYEE WHERE INCOME ='%d'" % (100)
     cursor.execute(sql)
     results = cursor.fetchall()
     return(results)
