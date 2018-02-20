@@ -35,11 +35,11 @@ def hello():
           sex = row[3]
           income = row[4]
           # Now print fetched result
-          print "fname=%s,lname=%s,age=%d,sex=%s,income=%d" % \
-                 (fname, lname, age, sex, income )
+          return(print "fname=%s,lname=%s,age=%d,sex=%s,income=%d" % \
+                 (fname, lname, age, sex, income ))
     except:
        print "Error: unable to fecth data"
-    return("test")
+    #return("test")
 
 if __name__ == "__main__":
     application.debug = True
