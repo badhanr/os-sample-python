@@ -23,17 +23,9 @@ def hello():
     cursor.execute(sql)
     sql = "SELECT FIRST_NAME FROM EMPLOYEE \
        WHERE INCOME == '%d'" % (7000)
-    try:
-       # Execute the SQL command
-       cursor.execute(sql)
-       # Fetch all the rows in a list of lists.
-       results = cursor.fetchall()
-       for row in results:
-          fname = row[0]
-          # Now print fetched result
-          return(fname)
-    except:
-       print "Error: unable to fecth data"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return(results)
     #return("test")
 
 if __name__ == "__main__":
