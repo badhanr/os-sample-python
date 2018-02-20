@@ -22,7 +22,7 @@ def hello():
          LAST_NAME, AGE, SEX, INCOME)
          VALUES ('drakshya', 'Mac', 20, 'F', 10000)"""
     cursor.execute(sql)
-    cursor.commit()
+    db.commit()
     sql = "SELECT FIRST_NAME FROM EMPLOYEE WHERE INCOME =(?)"
     args = ('100',)
     cursor.execute(sql,args)
