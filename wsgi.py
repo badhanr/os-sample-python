@@ -1,5 +1,6 @@
 from flask import Flask
 import MySQLdb
+import DBHelper
 application = Flask(__name__)
 
 @application.route("/")
@@ -10,6 +11,7 @@ def hello():
     cursor = db.cursor()
     # execute SQL query using execute() method.
     cursor.execute("SELECT VERSION()")
+    DBHelper.setup()
     
     #sql = """CREATE TABLE EMPLOYEE (
          #FIRST_NAME  CHAR(20) NOT NULL,
@@ -18,11 +20,11 @@ def hello():
          #SEX CHAR(1),
          #INCOME FLOAT )"""
     #cursor.execute(sql)
-    sql = """INSERT INTO EMPLOYEE(FIRST_NAME,
-         LAST_NAME, AGE, SEX, INCOME)
-         VALUES ('drakshya', 'Mac', 20, 'F', 10000)"""
-    cursor.execute(sql)
-    db.commit()
+    #sql = """INSERT INTO EMPLOYEE(FIRST_NAME,
+         #LAST_NAME, AGE, SEX, INCOME)
+         #VALUES ('drakshya', 'Mac', 20, 'F', 10000)"""
+    #cursor.execute(sql)
+    #db.commit()
     #sql = "SELECT FIRST_NAME FROM EMPLOYEE WHERE INCOME =(?)"
     #args = ('100',)
     #cursor.execute(sql,args)
