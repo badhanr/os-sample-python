@@ -4,7 +4,7 @@ from dbhelper import DBHelper
 application = Flask(__name__)
 
 @application.route("/")
-def hello():
+def callingDB():
     # Open database connection
     #db = MySQLdb.connect(host="172.30.115.81", port=3306, user="userRTL", passwd="eNU1gYbC1EYLe6gN", db="sampledb" )
     # prepare a cursor object using cursor() method
