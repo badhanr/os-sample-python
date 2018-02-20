@@ -23,10 +23,10 @@ def hello():
          VALUES ('drakshya', 'Mac', 20, 'F', 10000)"""
     cursor.execute(sql)
     db.commit()
-    sql = "SELECT FIRST_NAME FROM EMPLOYEE WHERE INCOME =(?)"
-    args = ('100',)
-    cursor.execute(sql,args)
-    results = cursor.fetchall()
+    #sql = "SELECT FIRST_NAME FROM EMPLOYEE WHERE INCOME =(?)"
+    #args = ('100',)
+    #cursor.execute(sql,args)
+    #results = cursor.fetchall()
     #for row in results:
       #fname = row[0]
       #lname = row[1]
