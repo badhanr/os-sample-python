@@ -1,7 +1,7 @@
 from flask import Flask
 #import MySQLdb
 from dbhelper import DBHelper
-application = Flask(__name__)c
+application = Flask(__name__)
 
 @application.route("/")
 def hello():
