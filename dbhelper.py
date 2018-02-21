@@ -63,9 +63,13 @@ class DBHelper:
     def get_case_subject(self,ticket_no ,chat, date_today):
         stmt = "select * from cases where log_date = (%s) and owner = (%s) and ticket_no = (%s)"
         args = (date_today,chat,ticket_no)
-        result = [x for x in conn.execute(stmt, args)]
+        conn.execute(stmt, args)
+        results=conn.fetchall()
+        for row in results:
+            return row
+        #result = [x for x in conn.execute(stmt, args)]
         #print(result)
-        return result
+        #return result
 
 
     def get_case_department(self,ticket_no ,chat):
