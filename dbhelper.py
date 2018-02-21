@@ -1,10 +1,11 @@
 import MySQLdb
+
 class DBHelper:
     
     def __init__(self, dbname="sampledb"):
         #self.dbname = dbname
-        self.db = MySQLdb.connect(host="172.30.115.81", port = 3306, user = "userRTL", passwd = "eNU1gYbC1EYLe6gN", db = "sampledb" )
-        self.conn = db.cursor()
+        db = MySQLdb.connect(host="172.30.115.81", port = 3306, user = "userRTL", passwd = "eNU1gYbC1EYLe6gN", db = "sampledb" )
+        conn = db.cursor()
 
     def setup(self):
         tblstmt = "CREATE TABLE IF NOT EXISTS items (description char(50), owner char(50))"
