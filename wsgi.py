@@ -14,7 +14,7 @@ def hello():
     print(res1)
     #DBh.delete_chat("def")
     #DBh.delete_case("1234","def")
-    DBh.add_case_subject("1234","abc", "cde", "tesr", "test", "7/28/2018")
+    DBh.add_case_subject("1234","abc", "cde", "tesr", "test", "21/2/2018")
     res2=DBh.get_case_subject("1234" ,"abc","21/2/2018")
     print(res2)
     DBh.update_case_detail("yuc", "abc","21/2/2018","1234","1234")
