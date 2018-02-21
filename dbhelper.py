@@ -35,7 +35,9 @@ class DBHelper:
     def get_items(self, owner):
         stmt = "SELECT description FROM items WHERE owner = (%s)"
         args = (owner,)
-        return [x[0] for x in conn.execute(stmt, args)]
+        conn.execute(stmt, args)
+        results=conn.fetchall()
+        return [results[0] for results]
 
     def delete_chat(self,owner):
         #stmt = "UPDATE items SET description = '' WHERE owner = (?)"
