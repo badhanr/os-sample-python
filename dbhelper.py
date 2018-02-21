@@ -21,9 +21,10 @@ class DBHelper:
         db.commit()
 
     def add_item(self, item_text, owner):
-        stmt = "INSERT INTO items (description, owner) VALUES (?, ?)"
-        args = (item_text, owner)
-        conn.execute(stmt, args)
+        stmt = "INSERT INTO items (description, owner) VALUES (item_text, owner)"
+        #args = (item_text, owner)
+        #conn.execute(stmt, args)
+        #conn.execute(stmt)
         db.commit()
 
     def delete_item(self, item_text, owner):
