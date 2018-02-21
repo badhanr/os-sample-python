@@ -38,9 +38,8 @@ class DBHelper:
         conn.execute(stmt, args)
         results=conn.fetchall()
         for row in results:
-            firstRow=row[0]
-        return firstRow
-
+           return row[0]
+    
     def delete_chat(self,owner):
         #stmt = "UPDATE items SET description = '' WHERE owner = (?)"
         stmt = "DELETE FROM items WHERE owner = (%s)"
