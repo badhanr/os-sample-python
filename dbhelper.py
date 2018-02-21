@@ -73,52 +73,64 @@ class DBHelper:
 
 
     def get_case_department(self,ticket_no ,chat):
-        stmt = "select department from cases where owner = (?) and ticket_no = (?)"
+        stmt = "select department from cases where owner = (%s) and ticket_no = (%s)"
         args = (chat,ticket_no)
-        result = [x for x in conn.execute(stmt, args)]
+        conn.execute(stmt, args)
+        result=conn.fetchall()
+        for row in result:
+            return row[0]
+        #result = [x for x in conn.execute(stmt, args)]
         #print(result)
-        return result[0]
+        #return result[0]
 
     def get_case_whd_ticket_id(self,ticket_no ,chat):
-        stmt = "select whd_ticket_id from cases where owner = (?) and ticket_no = (?)"
+        stmt = "select whd_ticket_id from cases where owner = (%s) and ticket_no = (%s)"
         args = (chat,ticket_no)
-        result = [x for x in conn.execute(stmt, args)]
+        conn.execute(stmt, args)
+        results= conn.fetchall()
+        for row in results:
+            return row[0]
+        #result = [x for x in conn.execute(stmt, args)]
         #print(result)
-        return result[0]
+        #return result[0]
 
     def delete_invalid_cases(self,chat):
-        stmt = "delete from cases where (subject is NULL or (owner_phn is null and owner_loc is null)) and owner = (?)"
+        stmt = "delete from cases where (subject is NULL or (owner_phn is null and owner_loc is null)) and owner = (%s)"
         args = (chat,)
         conn.execute(stmt, args)
         db.commit()
 
     def update_case_detail(self,text, chat, date_today,ticket_no,department):
-        stmt = "update cases set detail = (?),department = (?) where owner = (?) and log_date = (?) and ticket_no = (?)"
+        stmt = "update cases set detail = (%s),department = (%s) where owner = (%s) and log_date = (%s) and ticket_no = (%s)"
         args = (text,department,chat,date_today,ticket_no)
         conn.execute(stmt, args)
         db.commit()
 
     def update_case_phn_loc(self,phn,loc, chat, date_today,assignee,ticket_no):
-        stmt = "update cases set owner_phn = (?), owner_loc = (?), assignee = (?) where owner = (?) and log_date = (?) and ticket_no = (?)"
+        stmt = "update cases set owner_phn = (%s), owner_loc = (%s), assignee = (%s) where owner = (%s) and log_date = (%s) and ticket_no = (%s)"
         args = (phn,loc,assignee,chat,date_today,ticket_no)
         conn.execute(stmt, args)
         db.commit()
 
     def update_whd_ticket_id(self,whd_ticket_id, owner, date_today,ticket_no):
-        stmt = "update cases set whd_ticket_id = (?) where owner = (?) and log_date = (?) and ticket_no = (?)"
+        stmt = "update cases set whd_ticket_id = (%s) where owner = (%s) and log_date = (%s) and ticket_no = (%s)"
         args = (whd_ticket_id,owner, date_today, ticket_no)
         conn.execute(stmt, args)
         db.commit()
 
     def get_pending_case(self,chat):
-        stmt = "select * from cases where owner = (?)"
+        stmt = "select * from cases where owner = (%s)"
         args = (chat,)
-        result = [x for x in conn.execute(stmt, args)]
+        conn.execute(stmt, args)
+        results=conn.fetchall()
+        for row in results:
+            return row
+        #result = [x for x in conn.execute(stmt, args)]
         #print(result)
-        return result
+        #return result
 
     def update_priority(self,chat,priority,ticket_no):
-        stmt = "update cases set priority = (?) where owner = (?) and ticket_no = (?)"
+        stmt = "update cases set priority = (%s) where owner = (%s) and ticket_no = (%s)"
         args = (priority,chat,ticket_no)
         conn.execute(stmt, args)
         db.commit()
