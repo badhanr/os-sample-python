@@ -18,8 +18,10 @@ def hello():
     DBh.get_case_whd_ticket_id("1234","abc")
     DBh.delete_invalid_cases("hjju")
     DBh.update_case_detail("yuc", "abc","21/2/2018","1234","1234")
-    
-    
+    DBh.update_case_phn_loc("7894455612","Pune", "abc","21/2/2018","Elon","1234")
+    DBh.update_whd_ticket_id("1234569", "Elon","21/2/2018","1234")    
+    DBh.get_pending_case("abch")
+    DBh.update_priority("abc","2","1234569")
     
     
     return("test")
