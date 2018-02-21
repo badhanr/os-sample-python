@@ -65,11 +65,11 @@ class DBHelper:
         args = (date_today,chat,ticket_no)
         conn.execute(stmt, args)
         results=conn.fetchall()
-        #for row in results:
-            #return row
+        for row in results:
+            return row
         #result = [x for x in conn.execute(stmt, args)]
         #print(result)
-        return results
+        #return results
 
 
     def get_case_department(self,ticket_no ,chat):
