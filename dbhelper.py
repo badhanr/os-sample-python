@@ -21,7 +21,8 @@ class DBHelper:
         db.commit()
 
     def add_item(self, item_text, owner):
-        stmt = "INSERT INTO items (description, owner) VALUES (?, ?)"
+        #x.execute("""INSERT INTO anooog1 VALUES (%s,%s)""",(188,90)) 
+        stmt = "INSERT INTO items (description, owner) VALUES (%s, %s)"
         args = (item_text, owner)
         conn.execute(stmt, args)
         #conn.execute(stmt)
