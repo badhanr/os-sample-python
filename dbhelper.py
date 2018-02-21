@@ -49,7 +49,7 @@ class DBHelper:
 
     def delete_case(self,ticket_no,owner):
         #stmt = "UPDATE items SET description = '' WHERE owner = (?)"
-        stmt = "DELETE FROM cases WHERE ticket_no = (?) and owner = (%s)"
+        stmt = "DELETE FROM cases WHERE ticket_no = (%s) and owner = (%s)"
         args = (ticket_no,owner)
         conn.execute(stmt, args)
         db.commit()
