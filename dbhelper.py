@@ -64,10 +64,7 @@ class DBHelper:
         stmt = "select * from cases where log_date = (%s) and owner = (%s) and ticket_no = (%s)"
         args = (date_today,chat,ticket_no)
         conn.execute(stmt, args)
-        results=conn.fetchall()
-        listRes=[]
-        for row in results:
-            listRes.append(row)
+        results=conn.fetchone()
         #result = [x for x in conn.execute(stmt, args)]
         #print(result)
         #return results
