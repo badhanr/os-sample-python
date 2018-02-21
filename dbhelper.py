@@ -20,48 +20,45 @@ class DBHelper:
         #self.conn.execute(ownidx)
         db.commit()
 
-    def add_item(self, item_text, owner):
-        #x.execute("""INSERT INTO anooog1 VALUES (%s,%s)""",(188,90)) 
+    def add_item(self, item_text, owner): 
         stmt = "INSERT INTO items (description, owner) VALUES (%s, %s)"
         args = (item_text, owner)
         conn.execute(stmt, args)
-        #conn.execute(stmt)
         db.commit()
 
     def delete_item(self, item_text, owner):
-        stmt = "DELETE FROM items WHERE description = (item_text) AND owner = (owner)"
-        #args = (item_text, owner )
-        conn.execute(stmt)
-        #conn.execute(stmt, args)
+        stmt = "DELETE FROM items WHERE description = (%s) AND owner = (%s)"
+        args = (item_text, owner )
+        conn.execute(stmt, args)
         db.commit()
 
     def get_items(self, owner):
-        stmt = "SELECT description FROM items WHERE owner = (?)"
+        stmt = "SELECT description FROM items WHERE owner = (%s)"
         args = (owner,)
         return [x[0] for x in conn.execute(stmt, args)]
 
     def delete_chat(self,owner):
         #stmt = "UPDATE items SET description = '' WHERE owner = (?)"
-        stmt = "DELETE FROM items WHERE owner = (?)"
+        stmt = "DELETE FROM items WHERE owner = (%s)"
         args = (owner,)
         conn.execute(stmt, args)
         db.commit()
 
     def delete_case(self,ticket_no,owner):
         #stmt = "UPDATE items SET description = '' WHERE owner = (?)"
-        stmt = "DELETE FROM cases WHERE ticket_no = (?) and owner = (?)"
+        stmt = "DELETE FROM cases WHERE ticket_no = (?) and owner = (%s)"
         args = (ticket_no,owner)
         conn.execute(stmt, args)
         db.commit()
 
     def add_case_subject(self,ticket_no, text, chat, firstName, lastName, date_today):
-        stmt = "INSERT into cases (ticket_no,log_date, owner, subject, owner_fname, owner_lname) values (?,?,?,?,?,?)"
+        stmt = "INSERT into cases (ticket_no,log_date, owner, subject, owner_fname, owner_lname) values (%s,%s,%s,%s,%s,%s)"
         args = (ticket_no,date_today,chat,text,firstName,lastName)
         conn.execute(stmt, args)
         db.commit()
 
     def get_case_subject(self,ticket_no ,chat, date_today):
-        stmt = "select * from cases where log_date = (?) and owner = (?) and ticket_no = (?)"
+        stmt = "select * from cases where log_date = (%s) and owner = (%s) and ticket_no = (%s)"
         args = (date_today,chat,ticket_no)
         result = [x for x in conn.execute(stmt, args)]
         #print(result)
