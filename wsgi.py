@@ -32,7 +32,7 @@ def hello():
     #DBh.delete_invalid_cases("hjju")
     
    
-    DBh.update_whd_ticket_id("1234569", "Elon","21/2/2018","1234")    
+    DBh.update_whd_ticket_id("whd_ticket_id", "chat2",r"21/2/2017","ticket number 2")    
     res7=DBh.get_pending_case("chat2")
     print(res5)
     DBh.update_priority("abc","2","1234569")
