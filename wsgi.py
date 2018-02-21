@@ -27,7 +27,7 @@ def hello():
     res5=DBh.get_pending_case("abch")
     print(res5)
     DBh.update_priority("abc","2","1234569")
-    return(res1+res2+res3+res4+res5)
+    return(str(res1)+str(res2)+str(res3)+str(res4)+str(res5))
     #return("test")
 if __name__ == "__main__":
     application.debug = True
