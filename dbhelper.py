@@ -68,7 +68,7 @@ class DBHelper:
         #result = [x for x in conn.execute(stmt, args)]
         #print(result)
         #return results
-        return listRes
+        return results
 
 
     def get_case_department(self,ticket_no ,chat):
