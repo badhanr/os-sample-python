@@ -18,11 +18,12 @@ def hello():
     #DBh.delete_case("1234","def")
     DBh.add_case_subject("ticket number 1","text", "chat", "firstname", "lastname", r"21/2/2018")
     DBh.add_case_subject("ticket number 2","text2", "chat2", "firstname2", "lastname2", r"21/2/2017")
+    DBh.add_case_subject("ticket number 2","text2", "chat", "firstname2", "lastname2", r"21/2/2017")
     res3=DBh.get_case_subject("ticket number 2" ,"chat2", r"21/2/2017")
     #print(res2)
     DBh.update_case_detail("detail2", "chat2",r"21/2/2017","ticket number 2","department 2")
     DBh.update_case_phn_loc("7894455612","Pune", "chat2",r"21/2/2017","Elon","ticket number 2")
-    res4=DBh.get_case_subject("114524" ,"abc","21/2/2017")
+    res4=DBh.get_case_subject("ticket number 2" ,"chat2",r"21/2/2017")
     
     res5=DBh.get_case_department("ticket number 2","chat2")
     print(res3)
@@ -32,10 +33,10 @@ def hello():
     
    
     DBh.update_whd_ticket_id("1234569", "Elon","21/2/2018","1234")    
-    res7=DBh.get_pending_case("abch")
+    res7=DBh.get_pending_case("chat")
     print(res5)
     DBh.update_priority("abc","2","1234569")
-    return(str(res1)+"\n"+str(res2)+"\n"+str(res3)+"\n"+str(res4)+"\n"+str(res5)+"\n"+str(res6))
+    return(str(res1)+"\n"+str(res2)+"\n"+str(res3)+"\n"+str(res4)+"\n"+str(res5)+"\n"+str(res6)+"prnding cases"+)
     #return("test")
     
 if __name__ == "__main__":
