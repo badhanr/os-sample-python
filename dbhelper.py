@@ -4,6 +4,8 @@ class DBHelper:
     
     def __init__(self, dbname="sampledb"):
         #self.dbname = dbname
+        global db
+        global conn
         db = MySQLdb.connect(host="172.30.115.81", port = 3306, user = "userRTL", passwd = "eNU1gYbC1EYLe6gN", db = "sampledb" )
         conn = db.cursor()
 
