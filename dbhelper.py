@@ -37,7 +37,7 @@ class DBHelper:
         args = (owner,)
         conn.execute(stmt, args)
         results=conn.fetchall()
-        for row in result:
+        for row in results:
             firstRow=row[0]
         return firstRow
 
