@@ -12,7 +12,14 @@ def hello():
     DBh.get_items("def")
     DBh.delete_chat("def")
     DBh.delete_case("1234","def")
-    DBh.add_case_subject("1234", "abc", "cde", "tesr", "test", "7/28/2018")
+    DBh.add_case_subject("1234","abc", "cde", "tesr", "test", "7/28/2018")
+    DBh.get_case_subject("1234" ,"abc","21/2/2018")
+    DBh.get_case_department("1234","abc")
+    DBh.get_case_whd_ticket_id("abc")
+    DBh.delete_invalid_cases("hjju")
+    DBh.update_case_detail("yuc", "abc","21/2/2018","1234","1234")
+    
+    
     
     
     return("test")
