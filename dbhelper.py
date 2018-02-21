@@ -24,13 +24,14 @@ class DBHelper:
         stmt = "INSERT INTO items (description, owner) VALUES (item_text, owner)"
         #args = (item_text, owner)
         #conn.execute(stmt, args)
-        #conn.execute(stmt)
+        conn.execute(stmt)
         db.commit()
 
     def delete_item(self, item_text, owner):
-        stmt = "DELETE FROM items WHERE description = (?) AND owner = (?)"
-        args = (item_text, owner )
-        conn.execute(stmt, args)
+        stmt = "DELETE FROM items WHERE description = (item_text) AND owner = (owner)"
+        #args = (item_text, owner )
+        conn.execute(stmt)
+        #conn.execute(stmt, args)
         db.commit()
 
     def get_items(self, owner):
