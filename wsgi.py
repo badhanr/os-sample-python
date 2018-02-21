@@ -5,14 +5,16 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    # Open database connection
-    #db = MySQLdb.connect(host="172.30.115.81", port=3306, user="userRTL", passwd="eNU1gYbC1EYLe6gN", db="sampledb" )
-    # prepare a cursor object using cursor() method
-    #cursor = db.cursor()
-    # execute SQL query using execute() method.
-    #cursor.execute("SELECT VERSION()")
     DBh=DBHelper()
     DBh.setup()
+    DBh.add_item("abc","def")
+    DBh.delete_item("abc","def")
+    DBh.get_items("def")
+    DBh.delete_chat("def")
+    DBh.delete_case("1234","def")
+    DBh.add_case_subject("1234", "abc", "cde", "tesr", "test", "7/28/2018")
+    
+    
     return("test")
 if __name__ == "__main__":
     application.debug = True
