@@ -64,35 +64,33 @@ class DBHelper:
         stmt = "select * from cases where log_date = (%s) and owner = (%s) and ticket_no = (%s)"
         args = (date_today,chat,ticket_no)
         conn.execute(stmt, args)
-        results=conn.fetchall()
-        for row in results:
-            return row
+        results=conn.fetchone()
+        #for row in results:
+            #return row
         #result = [x for x in conn.execute(stmt, args)]
         #print(result)
-        #return result
+        return results
 
 
     def get_case_department(self,ticket_no ,chat):
         stmt = "select department from cases where owner = (%s) and ticket_no = (%s)"
         args = (chat,ticket_no)
         conn.execute(stmt, args)
-        result=conn.fetchall()
-        for row in result:
-            return row[0]
+        result=conn.fetchone()
         #result = [x for x in conn.execute(stmt, args)]
         #print(result)
-        #return result[0]
+        return result
 
     def get_case_whd_ticket_id(self,ticket_no ,chat):
         stmt = "select whd_ticket_id from cases where owner = (%s) and ticket_no = (%s)"
         args = (chat,ticket_no)
         conn.execute(stmt, args)
-        results= conn.fetchall()
-        for row in results:
-            return row[0]
+        results= conn.fetchone()
+        #for row in results:
+            #return row[0]
         #result = [x for x in conn.execute(stmt, args)]
         #print(result)
-        #return result[0]
+        return results
 
     def delete_invalid_cases(self,chat):
         stmt = "delete from cases where (subject is NULL or (owner_phn is null and owner_loc is null)) and owner = (%s)"
@@ -123,8 +121,10 @@ class DBHelper:
         args = (chat,)
         conn.execute(stmt, args)
         results=conn.fetchall()
+        listRes=[]
         for row in results:
-            return row
+           listRes.append(row)
+        return listRes
         #result = [x for x in conn.execute(stmt, args)]
         #print(result)
         #return result
