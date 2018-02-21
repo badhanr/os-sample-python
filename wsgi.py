@@ -36,7 +36,7 @@ def hello():
     res7=DBh.get_pending_case("chat")
     print(res5)
     DBh.update_priority("abc","2","1234569")
-    return(str(res1)+"\n"+str(res2)+"\n"+str(res3)+"\n"+str(res4)+"\n"+str(res5)+"\n"+str(res6)+"prnding cases"+)
+    return(str(res1)+"\n"+str(res2)+"\n"+str(res3)+"\n"+str(res4)+"\n"+str(res5)+"\n"+str(res6)+"prnding cases"+str(res7))
     #return("test")
     
 if __name__ == "__main__":
