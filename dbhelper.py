@@ -8,8 +8,9 @@ class DBHelper:
         global conn
         #db = MySQLdb.connect(host="172.30.115.81", port = 3306, user = "userRTL", passwd = "eNU1gYbC1EYLe6gN", db = "sampledb" )
         #db = MySQLdb.connect(host="172.30.115.81", port = 3306, user = "userRTL", passwd = "eNU1gYbC1EYLe6gN", db = "sampledb" )
-        db = MySQLdb.connect(host="172.30.76.229", port = 3306, user = "userCL4", passwd = "orVrVQUUJAG0nsQR", db = "sampledb" )
+        #db = MySQLdb.connect(host="172.30.76.229", port = 3306, user = "userCL4", passwd = "orVrVQUUJAG0nsQR", db = "sampledb" )
         #db = MySQLdb.connect(host="127.0.0.1", port = 3306, user = "userE31", passwd = "Y1Q0uja3W48gqJkv", db = "sampledb" )
+        db = MySQLdb.connect(host="172.30.121.78", port=3306, user="userLVM", passwd="jqL6XKERGU8MhA0J", db="botdb") 
         conn = db.cursor()
 
     def setup(self):
