@@ -16,8 +16,8 @@ def hello():
     #DBh.add_item("123","456")
     
     #DBh.delete_item("abc","def")
-    #res1=DBh.get_items("def")
-    #res2=DBh.get_items("456")
+    res1=DBh1.get_items("def")
+    res2=DBh1.get_items("456")
     #print(res1)
     #DBh.delete_chat("def")
     #DBh.delete_case("1234","def")
